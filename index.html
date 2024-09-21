@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Portfolio</title>
+    <!-- <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .portfolio-container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .image-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .image-grid img {
+            width: 30%;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .image-grid img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Floating Layer for Image */
+        .image-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .image-popup img {
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Alt Text Overlay */
+        .image-popup .caption {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 1.5rem;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        /* Close Button */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+        }
+    </style> -->
+</head>
+<body>
+    <div class="portfolio-container">
+        <div class="header">My Art Portfolio</div>
+        <div class="description">Showcasing my latest artwork and creative projects.</div>
+
+        <div class="image-grid">
+            <img src="images/image1.png" onclick="openImagePopup(this)" alt="A high-quality landscape photograph of a serene lake surrounded by mountains during sunset, with a mirror-like reflection of the sky on the water's sun.">
+            <img src="images/image2.png" onclick="openImagePopup(this)" alt="A high-quality art drawing of an abstract figure in bright colors, blending geometric shapes and swirling lines in a dynamic, vibrant composition.">
+            <img src="images/image3.png" onclick="openImagePopup(this)" alt="A high-quality landscape photograph of a tranquil forest path with sunlight streaming through the canopy of trees, creating dappled shadows on the ground.">
+            <img src="images/image4.png" onclick="openImagePopup(this)" alt="A high-quality art drawing of a surreal cityscape, with dreamlike colors and exaggerated architecture. The buildings are tall, with flowing shapes and">
+            <img src="images/image5.png" onclick="openImagePopup(this)" alt="A high-quality landscape photograph of a vast desert with golden sand dunes, under a clear blue sky. The dunes form gentle, flowing curves, and the su">
+            <img src="images/image6.png" onclick="openImagePopup(this)" alt="A high-quality art drawing of a tranquil forest scene, with large, twisted trees and soft, glowing light filtering through. The style is somewhat magic.">
+            <img src="images/image7.png" onclick="openImagePopup(this)" alt="A high-quality landscape photograph of a snowy mountain peak with a deep blue sky above. The mountain's ridges are sharp, and the snow sparkles under.">
+            <img src="images/image8.png" onclick="openImagePopup(this)" alt="A high-quality art drawing of a futuristic city skyline at night, with glowing neon lights and towering buildings. The buildings have sleek, modern de">
+            <img src="images/image9.png" onclick="openImagePopup(this)" alt="A high-quality landscape photograph of a coastal cliff with waves crashing against the rocks below. The sky is partly cloudy, and the sea is a deep bl">
+            <img src="images/image10.png" onclick="openImagePopup(this)" alt="A high-quality landscape photograph of a tranquil forest path with sunlight streaming through the canopy of trees, creating dappled shadows on the ground.">
+            <!-- Add more images here -->
+        </div>
+    </div>
+
+    <!-- Floating Layer Popup -->
+    <div id="image-popup" class="image-popup" onclick="closeImagePopup()">
+        <span class="close-btn">&times;</span>
+        <img id="popup-image" src="" alt="">
+        <div class="caption" id="popup-caption"></div>
+    </div>
+    <script>
+        function openImagePopup(imageElement) {
+            // Get the image source and alt text
+            const imageSrc = imageElement.src;
+            const imageAlt = imageElement.alt;
+
+            // Set the image and caption in the popup
+            document.getElementById('popup-image').src = imageSrc;
+            document.getElementById('popup-caption').innerText = imageAlt;
+
+            // Show the popup
+            document.getElementById('image-popup').style.display = 'flex';
+        }
+
+        function closeImagePopup() {
+            // Hide the popup
+            document.getElementById('image-popup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
